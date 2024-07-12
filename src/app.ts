@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 import searchBookRoutes from "./routes/searchBooks";
 import readBookRoutes from "./routes/readBooks";
 import readingBookRoutes from "./routes/readingBooks";
+import wishBookRoutes from "./routes/wishBooks";
 
 dotenv.config();
 
@@ -18,5 +19,7 @@ mongoose
 
 app.use("/api/books/search", searchBookRoutes);
 app.use("/api/books/read", readBookRoutes);
-app.use("/api/books/reading");
+app.use("/api/books/reading", readingBookRoutes);
+app.use("/api/books/wish", wishBookRoutes);
+
 export default app;
