@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import mongoose from "mongoose";
 import searchBookRoutes from "./routes/searchBooks";
 import readBookRoutes from "./routes/readBooks";
+import readingBookRoutes from "./routes/readingBooks";
 
 dotenv.config();
 
@@ -17,4 +18,5 @@ mongoose
 
 app.use("/api/books/search", searchBookRoutes);
 app.use("/api/books/read", readBookRoutes);
+app.use("/api/books/reading");
 export default app;
