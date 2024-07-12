@@ -1,5 +1,6 @@
-import express from 'express';
-import dotenv from 'dotenv';
+import express from "express";
+import dotenv from "dotenv";
+import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import searchBookRoutes from "./routes/searchBooks";
 import readBookRoutes from "./routes/readBooks";
@@ -9,6 +10,8 @@ import wishBookRoutes from "./routes/wishBooks";
 dotenv.config();
 
 const app = express();
+
+app.use(bodyParser.json());
 
 const db: string = process.env.MONGODB_CONNECTION || "";
 
