@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import searchBookRoutes from "./routes/searchBooks";
@@ -11,6 +12,11 @@ dotenv.config();
 
 const app = express();
 
+app.use(
+  cors({
+    origin: process.env.FRONTEND_ORIGIN,
+  })
+);
 app.use(bodyParser.json());
 
 const db: string = process.env.MONGODB_CONNECTION || "";
